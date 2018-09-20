@@ -15,7 +15,7 @@
 
 <ion-content padding>
   <p>Escolha seu candidato:</p>
-  
+
   <ion-list>
      <ion-item *ngFor="let president of presidents">
       <ion-thumbnail item-start>
@@ -24,45 +24,6 @@
       <h3>{{ president.name }}</h3>
       <button (click)='goToPresidentListRankPage();' ion-button color="button-green" >Votar</button>
     </ion-item>
-    
-    
-    
-    <ion-item>
-      <ion-thumbnail item-start>
-        <img class="bad" src="https://fakeimg.pl/100x100/?retina=5&text=C&font=noto">
-      </ion-thumbnail>
-      <h3>Bob Esponja</h3>
-      <button ion-button color="button-green" >Votar</button>
-    </ion-item>
-    
-    <ion-item>
-      <ion-thumbnail item-start>
-        <img class="regular" src="https://fakeimg.pl/100x100/?retina=5&text=C&font=noto">
-      </ion-thumbnail>
-      <h3>Patrick Estrela do Mar</h3>
-      <button ion-button color="button-green" >Votar</button>
-    </ion-item>
-    
-    <ion-item>
-      <ion-thumbnail item-start>
-        <img class="good" src="https://fakeimg.pl/100x100/?retina=5&text=C&font=noto">
-      </ion-thumbnail>
-      <h3>Patrick Estrela do Mar</h3>
-     <button ion-button color="button-green" >Votar</button>
-    </ion-item>
-    
-    <ion-item>
-      <ion-thumbnail item-start>
-        <img class="good" src="https://fakeimg.pl/100x100/?retina=5&text=C&font=noto">
-      </ion-thumbnail>
-      <h3>Patrick Estrela do Mar</h3>
-      <p class="">
-        <progress-bar [progress]="10"></progress-bar>
-      </p>
-     
-     <p item-end>10%</p>
-    </ion-item>
-    
-    
+
   </ion-list>
 </ion-content>
