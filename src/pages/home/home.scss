@@ -1,3 +1,57 @@
-page-home {
-
+page-home, .page-home {
+    ion-header{
+         background-color: #00B169;
+    }
+    .content{
+        background-color: #00B169;
+        
+        &:after {
+            content: " ";
+            display: block;
+            margin-top: -3vh;
+            margin-left: -5vw;
+            border-left: 100vw solid transparent;
+            border-bottom: 100vh solid #00985B;
+        }
+        h2{
+            font-size: 2.8rem;
+            font-weight: 300;
+            text-align: center;
+            text-transform :uppercase;
+            color: #F7FFFB;
+            strong{
+                font-size: 4.4rem;
+                font-weight: 500;
+            }
+        }
+        p{
+            color: map-get($colors, 'light');
+            text-align: center;
+            &:first-child{
+                margin-top: 5vh;
+                margin-bottom: 10vh;
+            }
+            img{
+                max-width: 50vw;
+            }
+             button{
+                text-transform :uppercase;
+                
+                &.button-outline {
+                    height: 5.6rem;
+                    padding-left: 55px;
+                    padding-right: 55px;
+                    font-size: 2.4rem;
+                    font-weight: 300;
+                }
+            }
+        }
+        hr{
+            max-width: 78vw;
+            margin-top: 5vh;
+            margin-bottom: 5vh;
+            background-color: map-get($colors, 'light');
+        }
+       
+    }
 }

@@ -9,6 +9,11 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { AutenticacaoPage } from '../pages/autenticacao/autenticacao';
+import { PresidentListPage } from '../pages/president-list/president-list';
+import { PresidentListRankPage } from '../pages/president-list-rank/president-list-rank';
+import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
+//
+import { Facebook } from '@ionic-native/facebook';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -20,7 +25,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     HomePage,
     TabsPage,
-    AutenticacaoPage
+    AutenticacaoPage,
+    PresidentListPage,
+    PresidentListRankPage,
+    
+    ProgressBarComponent
   ],
   imports: [
     BrowserModule,
@@ -33,12 +42,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     HomePage,
     TabsPage,
-    AutenticacaoPage
+    AutenticacaoPage,
+    PresidentListPage,
+    PresidentListRankPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    Facebook
   ]
 })
 export class AppModule {}

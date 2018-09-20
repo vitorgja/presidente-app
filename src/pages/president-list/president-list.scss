@@ -1,0 +1,36 @@
+page-president-list {
+    ion-header{
+        ion-navbar{
+            ion-title{
+                img{
+                    max-width: 35vw;
+                    margin-left: 13vw;
+                }
+            }
+        }
+    }
+    ion-list{
+        ion-item{
+            ion-thumbnail{
+                img{
+                    border-radius: 50px;
+                    padding: 2px;
+                    &.bad{
+                        border: 2px solid map-get($colors, 'theme-red');
+                    }
+                    &.regular{
+                        border: 2px solid map-get($colors, 'theme-yellow');
+                    }
+                    &.good{
+                        border: 2px solid map-get($colors, 'theme-blue');
+                    }
+                }
+            }
+            .item-inner{
+                 p[item-end]{
+                    margin-top: 22px;
+                }
+            }
+        }
+    }
+}

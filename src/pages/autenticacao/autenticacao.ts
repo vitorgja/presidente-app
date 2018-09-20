@@ -1,4 +1,11 @@
+import { Component } from '@angular/core';
+import { NavController } from 'ionic-angular';
 import { Facebook } from '@ionic-native/facebook';
+
+import { Usuario } from './autenticacao.model';
+
+import { PresidentListPage } from '../president-list/president-list';
+
 
 @IonicPage()
 @Component({
@@ -7,12 +14,23 @@ import { Facebook } from '@ionic-native/facebook';
 })
 
 export class AutenticacaoPage {
-  constructor() {
+  rootPresidentList = PresidentListPage;
+  user = null;
+  salvarService = {
+    salvarFacebook: (usuario)=>{
+      this.user = usuario
+    }
+  }
+  constructor(private navCtrl: NavController, public facebook: Facebook) {
     //atribuicao do pacote do facebook
-    public facebook: Facebook,
+    //public facebook: Facebook,
   }
 
-//método para chamar api do facebook e salvar no banco o usuario    
+  goToPresidentList() {
+    this.navCtrl.push(PresidentListPage);
+  }
+
+//metodo para chamar api do facebook e salvar no banco o usuario    
 loginFacebook() {
      let permissions = new Array<string>();
      permissions = ["public_profile", "email"];
@@ -42,8 +60,8 @@ loginFacebook() {
 
   logar(usuario: Usuario) {
     this.salvarService.salvarFacebook(usuario)
-    .then(() => {
-        console.log('Usuario cadastrado via facebook com sucesso!');
-    })
+    // .then(() => {
+    //     console.log('Usuario cadastrado via facebook com sucesso!');
+    // })
   }
 }
