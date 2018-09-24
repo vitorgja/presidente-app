@@ -27,8 +27,8 @@ export class PresidentListPage {
       {name: "Foo D", photo: "https://fakeimg.pl/100x100/?retina=5&text=D&font=noto", votos: 15.00, action: "bad"}
     ];
 
-    // dbPresident.save({name:"Joao", tel:"foo bar"});
-    console.log("My DB: ", dbPresident.getAll());
+    this.foo()
+
   }
 
   ionViewDidLoad() {
@@ -37,6 +37,18 @@ export class PresidentListPage {
 
   goToPresidentListRankPage(){
     this.navCtrl.push(PresidentListRankPage);
+  }
+
+  foo(){
+    console.log("My DB.get: ", this.dbPresident.get("6hCEFHnxvUSCdLlWicgc"));
+    console.log("My DB.getAll: ", this.dbPresident.getAll());
+    try{
+      this.dbPresident.save({name:"Joao", tel:"foo bar"});
+    }catch(e){
+      console.log("DEU PAU AQUII: ", e.getMessage())
+    }
+
+
   }
 
 }
