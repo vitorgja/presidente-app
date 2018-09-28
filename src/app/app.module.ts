@@ -18,6 +18,7 @@ import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { PresidentProvider } from '../providers/president/president';
+import { VotosProvider } from '../providers/votos/votos';
 
 // Integração FB
 import { Facebook } from '@ionic-native/facebook';
@@ -25,6 +26,18 @@ import { Facebook } from '@ionic-native/facebook';
 // Firebase
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+
+
+//import firebase from 'firebase';
+
+const firebaseConfig = {
+   apiKey: "AIzaSyDqVw26R3yLgXn123WQy-Nr3FVMeiZEojs",
+  authDomain: "president-app-774ab.firebaseapp.com",
+  databaseURL: "https://president-app-774ab.firebaseio.com",
+  projectId: "president-app-774ab",
+  storageBucket: "president-app-774ab.appspot.com",
+  messagingSenderId: "792581782345"
+}
 
 @NgModule({
   declarations: [
@@ -42,15 +55,8 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    AngularFireModule.initializeApp({
-      apiKey: "AIzaSyDqVw26R3yLgXn123WQy-Nr3FVMeiZEojs",
-      authDomain: "president-app-774ab.firebaseapp.com",
-      databaseURL: "https://president-app-774ab.firebaseio.com",
-      projectId: "president-app-774ab",
-      storageBucket: "president-app-774ab.appspot.com",
-      messagingSenderId: "792581782345"
-    }),
-    AngularFireDatabaseModule
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -68,7 +74,8 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Facebook,
-    PresidentProvider
+    PresidentProvider,
+    VotosProvider
   ]
 })
 export class AppModule {}

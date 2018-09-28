@@ -1,17 +1,17 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Login com Facebook
-    </ion-title>
+  <ion-navbar color="theme-green">
+    <ion-title> <img src="assets/imgs/logo-diretas-ja.png"></ion-title>
   </ion-navbar>
 </ion-header>
 
+
 <ion-content padding>
-    <button ion-button full icon-left (click)='loginFacebook();'>
-      <ion-icon name="logo-facebook"></ion-icon>Login com Facebook
-    </button>
-    <p class="">
-      <button (click)='goToPresidentList();' class="clean">Ver Presidentes</button>
-    </p>
+  <p>Para participar da votação você precisa estar previamente <b>Logado</b>.</p>
+  <button ion-button full icon-left (click)='loginFacebook();'>
+    <ion-icon name="logo-facebook"></ion-icon>Login com Facebook
+  </button>
+  <p class="">
+    <button ion-button full (click)='goToPresidentList();' color="light">Ver Presidentes</button>
+  </p>
     
 </ion-content>

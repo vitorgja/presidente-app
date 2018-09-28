@@ -15,9 +15,26 @@
 
 <ion-content padding>
   <p>Escolha seu candidato:</p>
-
+  <!--<button (click)="gerarPresidentes();">GERAR PRESIDENTES</button>-->
+  <ion-list inset>
+     <ion-item *ngFor="let president of porra | async">
+       <ion-thumbnail item-start>
+        <img *ngIf="president.foto" class="{{ calcVotos(president.voto) }}" src="{{ president.foto }}">
+        <img *ngIf="!president.foto" class="{{ calcVotos(president.voto) }}" src="https://fakeimg.pl/100x100/?retina=5&text=P&font=noto">
+      </ion-thumbnail>
+      <h3>{{ president.candidato }}</h3>
+      <p>{{ president.vice }}</p>
+      <button *ngIf="jaVotou == true"(click)='goToPresidentListRankPage();' ion-button color="button-green" >Next</button>
+      <button *ngIf="jaVotou != true" (click)='votar(president);' ion-button color="button-green" >Votar</button>
+      <!--<button (click)='remover(president);'>Apagar</button>-->
+      {{ getVotos(president) }}
+    </ion-item>
+  </ion-list>
+  
+  <hr>
+  
   <ion-list>
-     <ion-item *ngFor="let president of presidents">
+    <ion-item *ngFor="let president of presidents">
       <ion-thumbnail item-start>
         <img class="{{ president.action }}" src="{{ president.photo }}">
       </ion-thumbnail>
